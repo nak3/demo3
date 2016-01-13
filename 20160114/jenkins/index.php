@@ -12,7 +12,7 @@
 ?>
 </h1>
 <form action="index.php" method="get">
-  <input type="hidden" name="kakushi" value="Good Morning OpenShift v3!">
+  <input type="hidden" name="kakushi" value="Morning OpenShift v3!">
   <input type="submit">
 </form>
 
