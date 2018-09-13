@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: simple-build
+  name: simple-build
+spec:
+  nodeSelector: null
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    contextDir: kitchensink
+    git:
+      ref: 7.0.0.GA
+      uri: https://github.com/jboss-developer/jboss-eap-quickstarts
+    type: Git
+  strategy:
+    sourceStrategy:
+      env:
+      - name: MAVEN_MIRROR_URL
+      - name: ARTIFACT_DIR
+      forcePull: true
+      from:
+        kind: ImageStreamTag
+        name: jboss-eap70-openshift:1.7
+        namespace: openshift
+    type: Source
+  triggers:
+  - type: ConfigChange

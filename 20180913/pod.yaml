@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-pod
+spec:
+  containers:
+  - name: sleep
+    image: busybox
+    command: ["tail", "-f", "/dev/null"]
