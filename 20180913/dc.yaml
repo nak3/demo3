@@ -21,23 +21,13 @@ spec:
     type: Rolling
   template:
     metadata:
-      creationTimestamp: null
       labels:
         deployment-config.name: simple-pod-dc
     spec:
       containers:
-      - command: ["tail", "-f", "/dev/null"]
+      - name: sleep
         image: busybox
-        imagePullPolicy: Always
-        name: simple-pod
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
+        command: ["tail", "-f", "/dev/null"]
   test: false
   triggers:
   - type: ConfigChange

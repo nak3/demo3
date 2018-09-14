@@ -1,7 +1,7 @@
 Cheat sheet
 ---
 
-### C.1
+### Ch.1
 
 #### env setup
 
@@ -48,7 +48,7 @@ Cheat sheet
 
 ### Ch.2
 
-### Getting objects
+#### Getting objects
 
 ~~~
 # oc get all
@@ -62,7 +62,7 @@ Cheat sheet
 # oc get dc -o yaml
 ~~~
 
-### Getting log
+#### Getting log
 
 ~~~
 # oc logs $TOD_POD_NAME 
@@ -76,12 +76,12 @@ Cheat sheet
 # oc get event
 ~~~
 
-
+#### Further debugging
 
 ~~~
 # oc rsh $TOD_POD_NAME 
 
-- or -
+  - or -
 
 # oc exec -it $TOD_POD_NAME bash
 ~~~
@@ -96,6 +96,8 @@ Cheat sheet
 
 ### Ch.3
 
+#### setting env
+
 ~~~
 # oc set env dc $TODO_DC_NAME AUTO_DEPLOY_EXPLODED=true
 ~~~
@@ -103,6 +105,8 @@ Cheat sheet
 ~~~
 # oc set env dc $TODO_DC_NAME --list
 ~~~
+
+#### creating configmap 
 
 ~~~
 # oc create configmap --from-literal=testkey=foo  envcmp
@@ -114,6 +118,7 @@ Cheat sheet
 # oc create configmap --from-file=test.txt  filecmp
 ~~~
 
+#### setting configmap 
 
 ~~~
 # oc set env --from=configmap/envcmp  dc/$TODO_DC_NAME

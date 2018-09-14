@@ -5,9 +5,6 @@ metadata:
     app: simple-build
   name: simple-build
 spec:
-  nodeSelector: null
-  postCommit: {}
-  resources: {}
   runPolicy: Serial
   source:
     contextDir: kitchensink
